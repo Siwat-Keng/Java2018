@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<BorderPane onMouseDragged="#handleMouseDragged" onMousePressed="#handleMousePressed" prefHeight="303.0" prefWidth="400.0" style="-fx-background-color: #3D4956; -fx-border-color: #d3d3d3;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.AddPatientController">
+  <bottom>
+    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="100.0">
+      <children>
+        <ImageView fx:id="imageOk" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#handleOkBtn" onMouseEntered="#mouseOnOkBtn" onMouseExited="#mouseOutOkBtn" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../../res/okicon.png" />
+          </image>
+        </ImageView>
+        <ImageView fx:id="imageCancel" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#closeProgram" onMouseEntered="#mouseOnCanceltBtn" onMouseExited="#mouseOutCancelBtn" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../../res/cancelicon.png" />
+          </image>
+        </ImageView>
+      </children>
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+    </HBox>
+  </bottom>
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+  </padding>
+  <top>
+    <VBox spacing="10.0" BorderPane.alignment="CENTER">
+      <children>
+        <Separator prefWidth="200.0" />
+        <Label text="Patient Information" textFill="LIGHTGREY">
+          <font>
+            <Font name="Arial Bold" size="18.0" />
+          </font>
+        </Label>
+        <Separator prefWidth="200.0" />
+        <GridPane hgap="10.0" prefHeight="350.0" prefWidth="360.0" vgap="10.0">
+          <children>
+            <TextField fx:id="nameField" style="-fx-background-radius: 10; -fx-background-color: #ff8c00;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Name :" textFill="LIGHTGREY" GridPane.rowIndex="1">
+              <font>
+                <Font name="Arial" size="15.0" fx:id="x1" />
+              </font>
+            </Label>
+            <Label font="$x1" text="Room :" textFill="LIGHTGREY" />
+            <ComboBox fx:id="roomBox" prefHeight="31.0" prefWidth="231.0" style="-fx-background-color: #ff8c00;" GridPane.columnIndex="1" />
+            <HBox alignment="CENTER_LEFT" prefHeight="73.0" prefWidth="230.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <padding>
+                <Insets bottom="10.0" right="10.0" top="10.0" />
+              </padding>
+            </HBox>
+            <Label font="$x1" text="Admit Date :" textFill="LIGHTGREY" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <VBox prefHeight="107.0" prefWidth="239.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <children>
+                    <Label font="$x1" text="from " textFill="LIGHTGREY" />
+                    <DatePicker fx:id="admitFromDate" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: #ff8c00;" />
+                  </children>
+                  <VBox.margin>
+                    <Insets right="10.0" />
+                  </VBox.margin>
+                </HBox>
+                <Separator prefHeight="6.0" prefWidth="148.0" />
+                <HBox alignment="CENTER_LEFT" prefHeight="109.0" prefWidth="241.0">
+                  <children>
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                      <children>
+                        <Label font="$x1" text="to     " textFill="LIGHTGREY" />
+                        <DatePicker fx:id="admitToDate" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: #ff8c00;" />
+                      </children>
+                    </HBox>
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="105.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="235.0" />
+          </columnConstraints>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+          </padding>
+          <rowConstraints>
+            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="145.0" minHeight="0.0" prefHeight="135.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" prefHeight="7.0" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+    </VBox>
+  </top>
+</BorderPane>

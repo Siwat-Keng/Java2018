@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.InformationPaneController">
+  <center>
+    <SplitPane dividerPositions="0.29754601226993865, 0.6226993865030674" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <TableView fx:id="roomInformationTable" prefHeight="468.0" prefWidth="228.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" fx:id="x1" />
+              </columnResizePolicy>
+              <columns>
+                <TableColumn prefWidth="75.0" text="Room">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Name" fx:id="roomColumn" />
+                    <TableColumn prefWidth="75.0" text="Status" fx:id="statusColumn" />
+                  </columns>
+                </TableColumn>
+              </columns>
+            </TableView>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <TableView fx:id="patientInformationTable" columnResizePolicy="$x1" prefHeight="468.0" prefWidth="190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Patient Log">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Name" fx:id="patientNameColumn" />
+                    <TableColumn prefWidth="75.0" text="From" fx:id="fromDateColumn" />
+                    <TableColumn prefWidth="75.0" text="To" fx:id="toDateColumn" />
+                  </columns>
+                </TableColumn>
+              </columns>
+            </TableView>
+          </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <TableView fx:id="employeeInformationTable" columnResizePolicy="$x1" prefHeight="468.0" prefWidth="542.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Employee">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Position" fx:id="positionColumn" />
+                    <TableColumn prefWidth="75.0" text="Name" fx:id="nameColumn" />
+                  </columns>
+                </TableColumn>
+              </columns>
+            </TableView>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </center>
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+  </padding>
+</BorderPane>

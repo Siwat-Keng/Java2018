@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane onMouseDragged="#handleMouseDragged" onMousePressed="#handleMousePressed" style="-fx-background-color: #3D4956; -fx-border-color: #d3d3d3;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.TakeLeaveScreenController">
+   <top>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <Label text="Select an employee" textFill="LIGHTGRAY">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <GridPane hgap="10.0" vgap="10.0">
+               <children>
+                  <Label text="Name :" textFill="LIGHTGRAY" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Date :" textFill="LIGHTGRAY" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="workDate" onAction="#dateSelected" prefHeight="21.0" prefWidth="230.0" style="-fx-background-color: #ff8c00;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Position :" textFill="LIGHTGRAY">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="positionBox" onAction="#showNameList" prefHeight="31.0" prefWidth="231.0" style="-fx-background-color: #ff8c00;" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="nameBox" prefHeight="31.0" prefWidth="231.0" style="-fx-background-color: #ff8c00;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Work Time :" textFill="LIGHTGRAY" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="107.0" prefWidth="239.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="from " textFill="LIGHTGRAY">
+                                 <font>
+                                    <Font name="Arial" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="fromBox" onAction="#setToDateLabel" prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #ff8c00;" />
+                           </children>
+                           <VBox.margin>
+                              <Insets right="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label fx:id="fromDateLabel" text="Label" textFill="#b5b2b2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Separator prefHeight="6.0" prefWidth="148.0" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="109.0" prefWidth="241.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <Label text="to     " textFill="LIGHTGRAY">
+                                       <font>
+                                          <Font name="Arial" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="toBox" onAction="#setToDateLabel" prefHeight="31.0" prefWidth="104.0" style="-fx-background-color: #ff8c00;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <Label fx:id="toDateLabel" text="Label" textFill="#b5b2b2">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Separator prefHeight="6.0" prefWidth="148.0" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </VBox>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="92.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="238.0" />
+               </columnConstraints>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding>
+               <rowConstraints>
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="89.0" minHeight="6.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="179.0" minHeight="0.0" prefHeight="179.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageOk" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#handleOkBtn" onMouseEntered="#mouseOnOkBtn" onMouseExited="#mouseOutOkBtn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/okicon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imageCancel" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#closeProgram" onMouseEntered="#mouseOnCanceltBtn" onMouseExited="#mouseOutCancelBtn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/cancelicon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>
